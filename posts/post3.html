@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tourism Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  animation: fadeIn 1s ease-in;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes cardPop {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* NAVBAR */
+.navbar {
+  background: #1b4332;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideDown 0.8s ease;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* BLOG TITLE */
+.blog-title {
+  text-align: center;
+  margin: 30px 10px;
+}
+
+/* BLOG CONTAINER */
+.blog-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* BLOG CARD */
+.blog-card {
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardPop 0.7s ease forwards;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-card h2,
+.blog-card p {
+  padding: 0 15px;
+}
+
+/* BUTTON */
+.read-btn {
+  display: block;
+  text-align: center;
+  margin: 15px;
+  background: #40916c;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.read-btn:hover {
+  background: #2d6a4f;
+  transform: scale(1.05);
+}
+
+/* POST PAGE */
+.post-container {
+  max-width: 800px;
+  background: white;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.post-img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  display: inline-block;
+  margin-top: 15px;
+  color: #1b4332;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: #1b4332;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blog-card {
+    width: 90%;
+  }
+
+  .blog-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-title {
+    font-size: 1.3rem;
+  }
+
+  .read-btn {
+    padding: 12px;
+  }
+}
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BLOG CONTAINER ===== */
+.blog-post {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #ffffff;
+  color: #2c2c2c;
+  line-height: 1.9;
+}
+
+/* ===== BLOG IMAGE ===== */
+.blog-post img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  margin-bottom: 25px;
+}
+
+/* ===== MAIN HEADING ===== */
+.blog-post h1 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0a3d62;
+}
+
+/* ===== SUB HEADINGS ===== */
+.blog-post h2 {
+  font-size: 26px;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  color: #1e3799;
+  border-left: 6px solid #38ada9;
+  padding-left: 15px;
+}
+
+.blog-post h3 {
+  font-size: 20px;
+  margin-top: 25px;
+  color: #273c75;
+}
+
+/* ===== PARAGRAPH ===== */
+.blog-post p {
+  font-size: 16.5px;
+  margin-top: 12px;
+  text-align: justify;
+}
+
+/* ===== LIST STYLING ===== */
+.blog-post ul {
+  margin-top: 15px;
+  padding-left: 25px;
+}
+
+.blog-post ul li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* ===== HOVER EFFECT ===== */
+.blog-post h2:hover {
+  color: #0097e6;
+  transition: 0.3s ease;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .blog-post {
+    padding: 20px;
+  }
+
+  .blog-post h1 {
+    font-size: 26px;
+  }
+
+  .blog-post h2 {
+    font-size: 22px;
+  }
+
+  .blog-post h3 {
+    font-size: 18px;
+  }
+
+  .blog-post p,
+  .blog-post ul li {
+    font-size: 15px;
+  }
+}
+
+</style>
+
+
+</style>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2>Pakistan Tourism</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Blogs</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<h1 class="blog-title">EXPLORE BALOCHISTAN</h1>
+
+<div class="blog-container">
+
+  <div class="blog-card">
+    <img src="../images/Chaman1.png">
+    <h2>Chaman</h2>
+    <p>a border city near Afghanistan.</p>
+    <a href="posts/post1.html" class="read-btn">Read More</a>
+  </div>
+
+  <div class="blog-card">
+    <img src="../images/gawadar.png">
+    <h2>Gwadar</h2>
+    <p>a port city on the Arabian Sea, known for its deep-sea port.</p>
+    <a href="posts/post2.html" class="read-btn">Read More</a>
+  </div>
+
+  <div class="blog-card">
+    <img src="../images/moolachokat.png">
+    <h2>moola chokot</h2>
+    <p>Moola Chotok is a hidden ravine and scenic spot famous for its waterfalls, cliffs, and natural beauty.</p>
+    <a href="posts/post3.html" class="read-btn">Read More</a>
+  </div>
+
+</div>
+<!-- BLOG START -->
+<div class="blog-post">
+
+
+
+  <!-- Blog Heading -->
+  <h1>Balochistan: The Land of Untouched Beauty and Rich Culture</h1>
+
+  <!-- Introduction -->
+  <p>
+    Balochistan is the largest province of Pakistan by area, yet it remains one of the most unexplored regions in the country. Known for its vast deserts, rugged mountains, serene beaches, and rich cultural heritage, Balochistan is a land of mystery and natural beauty. Despite its challenges, the province holds immense potential for tourism, culture, and development.
+  </p>
+
+  <h2>Geographical Beauty of Balochistan</h2>
+  <p>
+    Balochistan is blessed with diverse landscapes that include mountains, plateaus, deserts, and a long coastline along the Arabian Sea. From the rocky terrains of Chagai to the golden beaches of Gwadar, the province offers scenery unlike any other part of Pakistan. Its untouched nature makes it a paradise for explorers and adventure lovers.
+  </p>
+
+  <h2>Famous Tourist Attractions in Balochistan</h2>
+
+  <h3>1. Gwadar</h3>
+  <p>
+    Gwadar is a beautiful coastal city known for its deep-sea port and stunning beaches. The calm blue waters, fresh seafood, and peaceful environment make it a unique tourist destination. Gwadar also plays an important role in Pakistan’s economic future.
+  </p>
+
+  <h3>2. Hingol National Park</h3>
+  <p>
+    Hingol National Park is one of the largest national parks in Pakistan. It is famous for its unique rock formations, mud volcanoes, and wildlife. The iconic “Princess of Hope” rock structure attracts visitors from all over the country.
+  </p>
+
+  <h3>3. Ziarat</h3>
+  <p>
+    Ziarat is a hill station famous for its juniper forests, which are among the oldest in the world. The cool climate and natural beauty make it a popular summer retreat. The Quaid-e-Azam Residency is also located here.
+  </p>
+
+  <h3>4. Astola Island</h3>
+  <p>
+    Astola Island is Pakistan’s largest offshore island and one of its hidden gems. Surrounded by crystal-clear water, it is a perfect destination for nature lovers and photographers. Due to limited access, the island remains untouched and peaceful.
+  </p>
+
+  <h2>Culture and Traditions of Balochistan</h2>
+  <p>
+    The culture of Balochistan is rich and deeply rooted in traditions. The people are known for their hospitality, bravery, and strong sense of honor. Traditional Balochi dresses, music, and folk dances reflect the province’s unique identity. Handicrafts, embroidery, and local cuisine are also important parts of Baloch culture.
+  </p>
+
+  <h2>Why Balochistan Is Still Underrated</h2>
+  <p>
+    Despite its beauty, Balochistan remains less visited due to lack of awareness, infrastructure, and misconceptions about safety. However, many areas are safe and welcoming for tourists who travel responsibly. Promoting tourism can help improve the local economy and bring positive change.
+  </p>
+
+  <h2>Tourism Potential and Future</h2>
+  <p>
+    Balochistan has great potential to become a major tourist destination in Pakistan. With better facilities, promotion, and sustainable tourism practices, the province can attract both local and international visitors. Tourism can also create job opportunities and highlight the true image of Balochistan.
+  </p>
+
+  <h2>Conclusion</h2>
+  <p>
+    Balochistan is a land of untold stories, natural wonders, and cultural richness. From its majestic landscapes to its warm-hearted people, the province offers an experience that is truly unforgettable. Exploring Balochistan not only reveals Pakistan’s hidden beauty but also helps us understand and appreciate the diversity of our country.
+  </p>
+
+</div>
+<!-- BLOG END -->
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Pakistan Tourism | Designed by Hooriza</p>
+</footer>
+
+</body>
+</html>

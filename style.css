@@ -1,0 +1,603 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+/* MAIN CONTAINER */
+.logo {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 30px;
+    gap: 15px;
+    animation: slideDown 1s ease-in-out;
+}
+
+/* IMAGES */
+.logo img {
+    width: 60px;
+    height: auto;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* TEXT */
+.logo p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    max-width: 600px;
+    animation: fadeIn 2s ease-in;
+    line-height: 25px;
+}
+.logo .sec {
+height: 100px;
+width: 200px;
+}
+/* ANIMATIONS */
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .logo p {
+        font-size: 13px;
+        max-width: 100%;
+    }
+}
+/* Navbar spacing & font weight */
+.navbar-nav {
+  gap: 30px; /* space between links (Bootstrap-friendly) */
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;        /* a little darker */
+  letter-spacing: 0.6px;  /* clean, modern look */
+  color: #000000 !important; /* keep links white */
+}
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+  color: #f1c40f !important;
+}
+/* HERO SLIDER */
+#heroSlider img {
+  height: 90vh;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  bottom: 35%;
+  text-align: left;
+}
+
+.carousel-caption h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.carousel-caption .btn {
+  padding: 10px 25px;
+  font-weight: 600;
+}
+
+/* Dark overlay like GB website */
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 37, 22, 0.45);
+}
+/* Hero Section */
+.hero-section {
+  padding: 80px 5%;
+/* subtle Pakistan Tourism style gradient */
+  color: #6a6a6a;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Flex container */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* Left side text */
+.hero-text {
+  flex: 1 1 500px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 div {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.hero-text h1 span {
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #1e3b1b; /* highlight color */
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* Button */
+.hero-text .btn {
+  padding: 12px 30px;
+  background-color: #4d7d68;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-text .btn:hover {
+  background-color: #1e3b1b
+}
+
+/* Right side video */
+.hero-video {
+  flex: 1 1 500px;
+  max-width: 560px;
+}
+
+.hero-video iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text h1 span {
+    font-size: 3rem;
+  }
+  .hero-video iframe {
+    height: 250px;
+  }
+}
+
+
+
+/* Full screen background */
+/* HERO SECTION */
+.hero {
+  width: 100%;
+  min-height: 100vh;               /* full viewport height */
+  background-image: url('images/background.jpg'); /* background image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px 20px;
+}
+
+/* Dark overlay for readability */
+.hero .overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);  /* semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;                  /* allow wrapping on small screens */
+  gap: 20px;
+}
+
+/* COLUMNS LAYOUT */
+.columns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* SINGLE COLUMN CARD */
+.col {
+  flex: 1 1 300px;                  /* min width 300px, flexible */
+  background: rgba(255, 255, 255, 0.15); /* translucent card */
+  backdrop-filter: blur(5px);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* card hover */
+}
+
+/* CARD HOVER EFFECT */
+.col:hover {
+  transform: translateY(-5px);       /* lift card */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* IMAGE INSIDE COLUMN */
+.col img {
+  width: 100%;                        /* fill card width */
+  height: 180px;                       /* uniform height */
+  object-fit: cover;                   /* crop if needed */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth zoom */
+}
+
+/* IMAGE HOVER EFFECT */
+.col img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* CARD TEXT */
+.col h2 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.col p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fff; /* white for contrast over overlay */
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .col img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .columns {
+    flex-direction: column;           /* stack columns vertically */
+    gap: 15px;
+  }
+
+  .col {
+    flex: 1 1 100%;                   /* full width on mobile */
+    padding: 15px;
+  }
+
+  .col h2 {
+    font-size: 1.3rem;
+  }
+
+  .col p {
+    font-size: 0.95rem;
+  }
+
+  .col img {
+    height: 150px;
+  }
+}
+
+
+/* places you wanna visit */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+.city-section {
+  padding: 40px;
+}
+
+.city-section h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 800px;
+}
+
+/* ===== HORIZONTAL SCROLL CONTAINER ===== */
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scroll-snap-type: x mandatory;
+}
+
+/* hide vertical scroll */
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #0072ff;
+  border-radius: 10px;
+}
+
+/* ===== CITY BOX ===== */
+.city-box {
+  flex: 0 0 calc(33.333% - 14px); /* 3 boxes visible */
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  scroll-snap-align: start;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: all 0.4s ease;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== IMAGE ===== */
+.city-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+/* ===== TEXT ===== */
+.city-box h3 {
+  margin: 10px 0 6px;
+}
+
+.city-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== BUTTON ===== */
+.city-box button {
+  margin-top: 10px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.city-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.city-box:hover img {
+  transform: scale(1.1);
+}
+
+.city-box button:hover {
+  transform: scale(1.1);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .city-box {
+    flex: 0 0 80%;
+  }
+}
+/* blg */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+/* BLOG PAGE */
+.blog-title {
+  text-align: center;
+  margin: 30px 0;
+  font-family: "Lemon", serif;
+  background-color: #b5c99a;
+  height: 70px;
+}
+
+
+.blog-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  background: #cfe1b9;
+  width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.date {
+  color: gray;
+  font-size: 14px;
+}
+
+.read-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #718355;
+  color: white;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+/* POST PAGE */
+.post-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.post-container p {
+  line-height: 1.8;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #ff6600;
+  font-weight: bold;
+}
+.back-btn:hover {
+  text-decoration: underline;
+}
+/* FOOTER */
+/* FOOTER */
+.footer {
+  background: #709775;
+  color: #eee;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #fff;
+   font-family: "Roboto", sans-serif;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1.6;
+
+}
+
+.footer-section a:hover {
+  color: #d0efb1;
+}
+
+/* ICONS STYLING */
+.footer-section i {
+  margin-right: 8px;
+  color: #f0a500; /* gold/yellow icon color */
+}
+
+.footer-section.social a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-section.social a:hover i {
+  transform: scale(1.2);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-section.social a {
+    justify-content: center;
+  }
+}
